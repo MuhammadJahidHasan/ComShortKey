@@ -1,0 +1,693 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+<head>
+
+    <style>
+		
+	div {
+    border: 1px solid black;
+    background-color:#154360;
+	color:white;
+	padding:10px
+}	
+		
+		.center {
+    margin: auto;
+    width: 100%;
+    border: 1px solid white;
+    padding: 10px;
+	background-color:white;		
+}
+h3 {
+    color: #3498DB;
+    font-family: courier;
+    font-size: 140%;
+	
+}
+p  {
+    color: #17202A;
+    font-family: palatino;
+    font-size: 110%;
+
+}
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body style="background-color:#E5E7E9;">
+<div class="center">
+    <p style="color:green">Most Used Linux Command List<p>
+
+    <p>There are a countless number of commands in Linux. We are bound to use a number of them on a daily routine or numerous times to perform common tasks than others. It is important to note that certain commands are “distro-based” &#8211; they can only be found in specific distros. While others are generic Unix/Linux commands that you’ll find in all if not most mainstream distros.</p>
+    <p>In this article, we will introduce you a list of most frequently used Linux commands with their examples for easy learning. You can find the actual description of each Linux command in their manual page which you can access like this:</p>
+    <pre><div>$ man command-name
+</div></pre>
+    <h3>adduser/addgroup Command</h3>
+    <p>The <strong>adduser</strong> and <strong>addgroup</strong> commands are used to add a user and group to the system respectively according to the default configuration specified in <strong>/etc/adduser.conf</strong> file.</p>
+    <pre><div>$ sudo adduser tecmint
+</div></pre>
+
+    <h3>agetty Command</h3>
+    <p><strong>agetty</strong> is a program which manages physical or virtual terminals and is invoked by <strong>init</strong>. Once it detects a connection, it opens a tty port, asks for a user’s login name and calls up the <strong>/bin/login</strong> command. <strong>Agetty</strong> is a substitute of Linux <strong>getty</strong>:</p>
+    <pre><div>$ agetty -L 9600 ttyS1 vt100
+</div></pre>
+    <h3>alias Command</h3>
+    <p><strong>alias</strong> is a useful shell built-in command for creating aliases (shortcut) to a Linux command on a system. It is helpful for creating new/custom commands from existing Shell/Linux commands (including options):</p>
+    <pre><div>$ alias home='cd /home/tecmint/public_html'
+</div></pre>
+    <p>The above command will create an alias called <strong>home</strong> for <strong>/home/tecmint/public_html</strong> directory, so whenever you type <strong>home</strong> in the terminal prompt, it will put you in the <strong>/home/tecmint/public_html</strong> directory.</p>
+    <h3>anacron Command</h3>
+    <p><a >anacron</a> is a Linux facility used to run commands periodically with a frequency defined in days, weeks and months.</p>
+    <p>Unlike its sister <a >cron</a>; it assumes that a system will not run continuously, therefore if a scheduled job is due when the system is off, it’s run once the machine is powered on.</p>
+
+    <h3>apropos Command</h3>
+    <p><strong>apropos</strong> command is used to <a >search and display a short man page description</a> of a command/program as follows.</p>
+    <pre><div>$ apropos adduser
+</div></pre>
+    <h3>apt Command</h3>
+    <p><a>apt</a> tool is a relatively new higher-level package manager for Debian/Ubuntu systems:</p>
+    <pre><div>$ sudo apt update
+</div></pre>
+
+    <h3>apt-get Command</h3>
+    <p><a>apt-get</a> is a powerful and free front-end package manager for Debian/Ubuntu systems. It is used to install new software packages, remove available software packages, upgrade existing software packages as well as upgrade entire operating system.</p>
+    <pre><div>$ sudo apt-get update
+</div></pre>
+
+    <h3 >aptitude Command</h3>
+    <p><strong>aptitude</strong> is a powerful text-based interface to the Debian GNU/Linux package management system. Like <strong>apt-get</strong> and <strong>apt</strong>; it can be used to install, remove or upgrade software packages on a system.</p>
+    <pre><div>$ sudo aptitude update
+</div></pre>
+
+    <h3>arch Command</h3>
+    <p><strong>arch</strong> is a simple command for displaying machine architecture or hardware name (similar to <strong>uname -m</strong>):</p>
+    <pre><div>$ arch
+</div></pre>
+    <h3>arp Command</h3>
+    <p><strong>ARP</strong> (<strong>Address Resolution Protocol</strong>) is a protocol that maps IP network addresses of a network neighbor with the hardware (MAC) addresses in an IPv4 network.</p>
+    <p>You can use it as below to find all alive hosts on a network:</p>
+    <pre><div>$ sudo arp-scan --interface=enp2s0 --localnet
+</div></pre>
+    <h3>at Command</h3>
+    <p><a>at command</a> is used to schedule tasks to run in a future time. It’s an alternative to <strong>cron</strong> and <strong>anacron</strong>, however, it runs a task once at a given future time without editing any config files:</p>
+    <p>For example, to shutdown the system at 23:55 today, run:</p>
+    <pre><div>$ sudo echo "shutdown -h now" | at -m 23:55
+</div></pre>
+    <h3>atq Command</h3>
+    <p><strong>atq</strong> command is used to view jobs in <strong>at command</strong> queue:</p>
+    <pre><div>$ atq
+</div></pre>
+    <h3>atrm Command</h3>
+    <p><strong>atrm</strong> command is used to remove/deletes jobs (identified by their job number) from at command queue:</p>
+    <pre><div>$ atrm 2
+</div></pre>
+
+    <h3>awk Command</h3>
+    <p><a>Awk</a> is a powerful programming language created for text processing and generally used as a data extraction and reporting tool.</p>
+    <pre><div>$ awk '//{print}'/etc/hosts
+</div></pre>
+
+    <h3>batch Command</h3>
+    <p><strong>batch</strong> is also used to schedule tasks to run a future time, similar to the <a>at command</a>.</p>
+    <h3>basename Command</h3>
+    <p><strong>basename</strong> command helps to print the name of a file stripping of directories in the absolute path:</p>
+    <pre><div>$ basename bin/findhosts.sh
+</div></pre>
+    <h3>bc Command</h3>
+    <p><strong>bc</strong> is a simple yet powerful and arbitrary precision CLI calculator language which can be used like this:</p>
+    <pre><div>$ echo 20.05 + 15.00 | bc
+</div></pre>
+    <h3>bg Command</h3>
+    <p><strong>bg</strong> is a command used to send a process to the background.</p>
+    <pre><div>$ tar -czf home.tar.gz .
+$ bg 
+$ jobs
+</div></pre>
+
+    <h3>bzip2 Command</h3>
+    <p><a>bzip2</a> command is used to compress or decompress file(s).</p>
+    <pre><div>$ bzip2 -z filename      #Compress
+$ bzip2 -d filename.bz2  #Decompress
+</div></pre>
+
+    <h3>cal Command</h3>
+    <p>The <strong>cal</strong> command print a calendar on the standard output.</p>
+    <pre><div>$ cal
+</div></pre>
+    <h3>cat Command</h3>
+    <p><a>cat command</a> is used to view contents of a file or concatenate files, or data provided on standard input, and display it on the standard output.</p>
+    <pre><div>$ cat file.txt
+</div></pre>
+
+    <h3>chgrp Command</h3>
+    <p><strong>chgrp</strong> command is used to change the group ownership of a file. Provide the new group name as its first argument and the name of file as the second argument like this:</p>
+    <pre><div>$ chgrp tecmint users.txt
+</div></pre>
+    <h3>chmod Command</h3>
+    <p><strong>chmod</strong> command is used to change/update file access permissions like this.</p>
+    <pre><div>$ chmod +x sysinfo.sh
+</div></pre>
+    <h3>chown Command</h3>
+    <p><strong>chown</strong> command changes/updates the user and group ownership of a file/directory like this.</p>
+    <pre><div>$ chmod -R www-data:www-data /var/www/html
+</div></pre>
+
+    <h3>cksum Command</h3>
+    <p><strong>cksum</strong> command is used to display the CRC checksum and byte count of an input file.</p>
+    <pre><div>$ cksum README.txt
+</div></pre>
+    <h3>clear Command</h3>
+    <p><strong>clear</strong> command lets you clear the terminal screen, simply type.</p>
+    <pre><div>$ clear
+</div></pre>
+    <h3>cmp Command</h3>
+    <p><strong>cmp</strong> performs a byte-by-byte comparison of two files like this.</p>
+    <pre><div>$ cmp file1 file2
+</div></pre>
+    <h3>comm Command</h3>
+    <p><strong>comm</strong> command is used to compare two sorted files line-by-line as shown below.</p>
+    <pre><div>$ comm file1 file2
+</div></pre>
+    <h3>cp Command</h3>
+    <p><strong>cp</strong> command is used for copying files and directories from one location to another.</p>
+    <pre><div>$ cp /home/tecmint/file1 /home/tecmint/Personal/
+</div></pre>
+
+
+    <h3>date Command</h3>
+    <p><strong>date</strong> command displays/sets the system date and time like this.</p>
+    <pre><div>$ date
+$ date --set="8 JUN 2017 13:00:00"
+</div></pre>
+
+    <h3>dd Command</h3>
+    <p><strong>dd</strong> command is used for copying files, converting and formatting according to flags provided on the command line. It can strip headers, extracting parts of binary files and so on.</p>
+    <p>The example below shows creating a boot-able USB device:</p>
+    <pre><div>$ dd if=/home/tecmint/kali-linux-1.0.4-i386.iso of=/dev/sdc1 bs=512M; sync
+</div></pre>
+    <h3>df Command</h3>
+    <p><a>df command</a> is used to show file system disk space usage as follows.</p>
+    <pre><div>$ df -h
+</div></pre>
+
+    <h3>diff Command</h3>
+    <p><a>diff command</a> is used to compare two files line by line. It can also be used to <a>find the difference between two directories</a> in Linux like this:</p>
+    <pre><div>$ diff file1 file2
+</div></pre>
+    <p>Some useful diff tools for Linux: <a>8 Best File Comparison and Difference (Diff) Tools for Linux</a></p>
+    <h3>dir Command</h3>
+    <p><a>dir command</a> works like Linux <a>ls command</a>, it lists the contents of a directory.</p>
+    <pre><div>$ dir
+</div></pre>
+    <h3>dmidecode Command</h3>
+    <p><a>dmidecode command</a> is a tool for retrieving hardware information of any Linux system. It dumps a computer’s DMI (a.k.a SMBIOS) table contents in a human-readable format for easy retrieval.</p>
+    <p>To view your system hardware info, you can type:</p>
+    <pre><div>$ sudo dmidecode --type system
+</div></pre>
+    <p>Some useful tools to find out Linux system hardware info: <a>10 Useful Commands to Get Linux Hardware Information</a></p>
+    <h3>du Command</h3>
+    <p><a>du command</a> is used to show disk space usage of files present in a directory as well as its sub-directories as follows.</p>
+    <pre><div>$ du /home/aaronkilik
+</div></pre>
+    <h3>echo Command</h3>
+    <p><a>echo command</a> prints a text of line provided to it.</p>
+    <pre><div>$ echo “This is TecMint - Linux How Tos”
+</div></pre>
+    <h3>eject Command</h3>
+    <p><strong>eject command</strong> is used to eject removable media such as DVD/CD ROM or floppy disk from the system.</p>
+    <pre><div>$ eject /dev/cdrom
+$ eject /mnt/cdrom/
+$ eject /dev/sda
+</div></pre>
+    <h3>env Command</h3>
+    <p><strong>env command</strong> lists all the current environment variables and used to set them as well.</p>
+    <pre><div>$ env
+</div></pre>
+
+    <h3>exit Command</h3>
+    <p><strong>exit command</strong> is used to exit a shell like so.</p>
+    <pre><div>$ exit
+</div></pre>
+    <h3>expr Command</h3>
+    <p><strong>expr command</strong> is used to calculate an expression as shown below.</p>
+    <pre><div>$ expr 20 + 30
+</div></pre>
+    <h3>factor Command</h3>
+    <p><strong>factor command</strong> is used to show the prime factors of a number.</p>
+    <pre><div>$ factor 10
+</div></pre>
+    <h3>find Command</h3>
+    <p><a>find command</a> lets you search for files in a directory as well as its sub-directories. It searches for files by attributes such as permissions, users, groups, file type, date, size and other possible criteria.</p>
+    <pre><div>$ find /home/tecmint/ -name tecmint.txt
+</div></pre>
+
+
+    <h3>free Command</h3>
+    <p><a>free command</a> shows the system memory usage (free, used, swapped, cached, etc.) in the system including swap space. Use the<code> -h</code> option to display output in human friendly format.</p>
+    <pre><div>$ free -h
+</div></pre>
+
+
+    <h3>grep Command</h3>
+    <p><a>grep command</a> searches for a specified pattern in a file (or files) and displays in output lines containing that pattern as follows.</p>
+    <pre><div>$ grep ‘tecmint’ domain-list.txt
+</div></pre>
+
+
+    <h3>groups Command</h3>
+    <p><strong>groups command</strong> displays all the names of groups a user is a part of like this.</p>
+    <pre><div>$ groups
+$ groups tecmint
+</div></pre>
+    <h3>gzip Command</h3>
+    <p><a>Gzip</a> helps to compress a file, replaces it with one having a <code>.gz</code> extension as shown below:</p>
+    <pre><div>$ gzip passwds.txt
+$ cat file1 file2 | gzip &gt; foo.gz
+</div></pre>
+    <h3>gunzip Command</h3>
+    <p><strong>gunzip</strong> expands or restores files compressed with <strong>gzip</strong> command like this.</p>
+    <pre><div>$ gunzip foo.gz
+</div></pre>
+    <h3>head Command</h3>
+    <p><a>head command</a> is used to show first lines (10 lines by default) of the specified file or stdin to the screen:</p>
+    <pre><div># ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head
+</div></pre>
+    <h3>history Command</h3>
+    <p><a>history command</a> is used to show previously used commands or to get info about command executed by a user.</p>
+    <pre><div>$ history
+</div></pre>
+
+
+    <h3>hostname Command</h3>
+    <p><a>hostname command</a> is used to print or set system hostname in Linux.</p>
+    <pre><div>$ hostname
+$ hostname NEW_HOSTNAME
+</div></pre>
+    <h3>hostnamectl Command</h3>
+    <p><a>hostnamectl command</a> controls the system hostname under systemd. It is used to print or modify the system hostname and any related settings:</p>
+    <pre><div>$ hostnamectl
+$ sudo hostnamectl set-hostname NEW_HOSTNAME
+</div></pre>
+    <h3>hwclock</h3>
+    <p><strong>hwclock</strong> is a tool for managing the system hardware clock; read or set the hardware clock (RTC).</p>
+    <pre><div>$ sudo hwclock
+$ sudo hwclock --set --date 8/06/2017
+</div></pre>
+    <h3>hwinfo Command</h3>
+    <p><a>hwinfo</a> is used to probe for the hardware present in a Linux system like this.</p>
+    <pre><div>$ hwinfo
+</div></pre>
+
+
+    <h3>id Command</h3>
+    <p><strong>id command</strong> shows user and group information for the current user or specified username as shown below.</p>
+    <pre><div>$ id tecmint
+</div></pre>
+    <h3>ifconfig Command</h3>
+    <p><a>ifconfig command</a> is used to configure a Linux systems network interfaces. It is used to configure, view and control network interfaces.</p>
+    <pre><div>$ ifconfig
+$ sudo ifconfig eth0 up
+$ sudo ifconfig eth0 down
+$ sudo ifconfig eth0 172.16.25.125
+</div></pre>
+    <h3>ionice Command</h3>
+    <p><a>ionice command</a> is used to set or view process I/O scheduling class and priority of the specified process.</p>
+    <p>If invoked without any options, it will query the current I/O scheduling class and priority for that process:</p>
+    <pre><div>$ ionice -c 3 rm /var/logs/syslog
+</div></pre>
+
+    <h3>iostat Command</h3>
+    <p><a>iostat</a> is used to show CPU and input/output statistics for devices and partitions. It produces useful reports for updating system configurations to help balance the input/output load between physical disks.</p>
+    <pre><div>$ iostat
+</div></pre>
+    <h3>ip Command</h3>
+    <p><a>ip command</a> is used to display or manage routing, devices, policy routing and tunnels. It also works as a replacement for well known <a>ifconfig command</a>.</p>
+    <p>This command will assign an IP address to a specific interface (eth1 in this case).</p>
+    <pre><div>$ sudo ip addr add 192.168.56.10 dev eth1
+</div></pre>
+    <h3>iptables Command</h3>
+    <p><a>iptables is a terminal based firewall</a> for managing incoming and outgoing traffic via a set of configurable table rules.</p>
+    <p>The command below is used to check existing rules on a system (using it may require root privileges).</p>
+    <pre><div>$ sudo iptables -L -n -v
+</div></pre>
+
+
+    <h3>iw Command</h3>
+    <p><strong>iw command</strong> is used to manage wireless devices and their configuration.</p>
+    <pre><div>$ iw list
+</div></pre>
+    <h3>iwlist Command</h3>
+    <p><strong>iwlist command</strong> displays detailed wireless information from a wireless interface. The command below enables you to get detailed information about the <strong>wlp1s0</strong> interface.</p>
+    <pre><div>$ iwlist wlp1s0 scanning
+</div></pre>
+    <h3>kill Command</h3>
+    <p><a>kill command</a> is used to kill a process using its PID by sending a signal to it (default signal for kill is TERM).</p>
+    <pre><div>$ kill -p 2300
+$ kill -SIGTERM -p 2300
+</div></pre>
+    <h3>killall Command</h3>
+    <p><a>killall command</a> is used to kill a process by its name.</p>
+    <pre><div>$ killall firefox
+</div></pre>
+
+    <h3>kmod Command</h3>
+    <p><strong>kmod command</strong> is used to manage Linux kernel modules. To list all currently loaded modules, type.</p>
+    <pre><div>$ kmod list
+</div></pre>
+    <h3>last Command</h3>
+    <p><strong>last command</strong> display a listing of last logged in users.</p>
+    <pre><div>$ last
+</div></pre>
+    <h3>ln Command</h3>
+    <p><strong>ln command</strong> is used to create a soft link between files using the <code>-s</code> flag like this.</p>
+    <pre><div>$ ln -s /usr/bin/lscpu cpuinfo
+</div></pre>
+    <h3>locate Command</h3>
+    <p><a>locate command</a> is used to find a file by name. The locate utility works better and faster than it’s <strong>find</strong> counterpart.</p>
+    <p>The command below will search for a file by its exact name (not *name*):</p>
+    <pre><div>$ locate -b '\domain-list.txt'
+</div></pre>
+    <h3>login Command</h3>
+    <p><strong>login command</strong> is used to create a new session with the system. You’ll be asked to provide a username and a password to login as below.</p>
+    <pre><div>$ sudo login
+</div></pre>
+    <h3>ls Command</h3>
+    <p><a>ls command</a> is used to list contents of a directory. It works more or less like <a>dir command</a>.</p>
+    <p>The <code>-l</code> option enables long listing format like this.</p>
+    <pre><div>$ ls -l file1
+</div></pre>
+
+
+    <h3>lshw Command</h3>
+    <p><a>lshw command</a> is a minimal tool to get detailed information on the hardware configuration of the machine, invoke it with superuser privileges to get a comprehensive information.</p>
+    <pre><div>$ sudo lshw
+</div></pre>
+    <h3>lscpu Command</h3>
+    <p><a>lscpu command</a> displays system&#8217;s CPU architecture information (such as number of CPUs, threads, cores, sockets, and more).</p>
+    <pre><div>$ lscpu
+</div></pre>
+    <h3>lsof Command</h3>
+    <p><a>lsof command</a> displays information related to files opened by processes. Files can be of any type, including regular files, directories, block special files, character special files, executing text reference, libraries, and stream/network files.</p>
+    <p>To view files opened by a specific user’s processes, type the command below.</p>
+    <pre><div>$ lsof -u tecmint
+</div></pre>
+    <h3>lsusb Command</h3>
+    <p><a>lsusb command</a> shows information about USB buses in the system and the devices connected to them like this.</p>
+    <pre><div>$ lsusb
+</div></pre>
+    <h3>man Command</h3>
+    <p><strong>man command</strong> is used to view the on-line reference manual pages for commands/programs like so.</p>
+    <pre><div>$ man du
+$ man df
+</div></pre>
+    <h3>md5sum Command</h3>
+    <p><a>md5sum command</a> is used to <a>compute and print the MD5 message digest of a file</a>. If run without arguments, debsums checks every file on your system against the stock md5sum files:</p>
+    <pre><div>$ sudo debsums
+</div></pre>
+    <h3>mkdir Command</h3>
+    <p><a>mkdir command</a> is used to create single or more directories, if they do not already exist (this can be overridden with the <code>-p</code> option).</p>
+    <pre><div>$ mkdir tecmint-files
+OR 
+$ mkdir -p tecmint-files
+</div></pre>
+    <h3>more Command</h3>
+    <p><a>more command</a> enables you to view through relatively lengthy text files one screenful at a time.</p>
+    <pre><div>$ more file.txt
+</div></pre>
+    <p>Check difference between <strong>more</strong> and <strong>less</strong> command and <a>Learn Why ‘less’ is Faster Than ‘more’ Command</a></p>
+    <h3>mv Command</h3>
+    <p><strong>mv command</strong> is used to <a >rename files or directories</a>. It also moves a file or directory to another location in the directory structure.</p>
+    <pre><div>$ mv test.sh sysinfo.sh
+</div></pre>
+    <h3>nano Command</h3>
+    <p><strong>nano</strong> is a popular small, free and friendly <a>text editor for Linux</a>; a clone of <strong>Pico</strong>, the default editor included in the non-free Pine package.</p>
+    <p>To open a file using nano, type:</p>
+    <pre><div>$ nano file.txt
+</div></pre>
+    <h3>nc/netcat Command</h3>
+    <p><strong>nc (or netcat)</strong> is used for performing any operation relating to TCP, UDP, or UNIX-domain sockets. It can handle both IPv4 and IPv6 for opening TCP connections, sending UDP packets, listening on arbitrary TCP and UDP ports, <a>performing port scanning</a>.</p>
+    <p>The command below will help us see if the port 22 is open on the host 192.168.56.5.</p>
+    <pre><div>$ nc -zv 192.168.1.5 22
+</div></pre>
+
+
+    <h3>netstat Command</h3>
+    <p><a>netstat command</a> displays useful information concerning the Linux networking subsystem (network connections, routing tables, interface statistics, masquerade connections, and multicast memberships).</p>
+    <p>This command will display all open ports on the local system:</p>
+    <pre><div>$ netstat -a | more
+</div></pre>
+    <h3>nice Command</h3>
+    <p><strong>nice command</strong> is used to show or change the nice value of a running program. It runs specified command with an adjusted niceness. When run without any command specified, it prints the current niceness.</p>
+    <p>The following command starts the process &#8220;<a>tar command</a>&#8221; setting the &#8220;nice&#8221; value to 12.</p>
+    <pre><div>$ nice -12 tar -czf backup.tar.bz2 /home/*
+</div></pre>
+    <h3>nmap Command</h3>
+    <p><a>nmap</a> is a popular and powerful open source tool for network scanning and security auditing. It was intended to quickly scan large networks, but it also works fine against single hosts.</p>
+    <p>The command below will probe open ports on all live hosts on the specified network.</p>
+    <pre><div>$ nmap -sV 192.168.56.0/24
+</div></pre>
+    <h3>nproc Command</h3>
+    <p><strong>nproc command</strong> shows the number of processing units present to the current process. It’s output may be less than the number of online processors on a system.</p>
+    <pre><div>$ nproc
+</div></pre>
+    <h3>openssl Command</h3>
+    <p>The <strong>openssl</strong> is a command line tool for using the different cryptography operations of OpenSSL&#8217;s crypto library from the shell. The command below will create an archive of all files in the current directory and <a>encrypt the contents of the archive</a> file:</p>
+    <pre><div>$ tar -czf - * | openssl enc -e -aes256 -out backup.tar.gz
+</div></pre>
+    <h3>passwd Command</h3>
+    <p><strong>passwd command</strong> is used to create/update passwords for user accounts, it can also change the account or associated password validity period. Note that normal system users may only change the password of their own account, while root may modify the password for any account.</p>
+    <pre><div>$ passwd tecmint
+</div></pre>
+    <h3>pidof Command</h3>
+    <p><strong>pidof</strong> displays the <a>process ID of a running program</a>/command.</p>
+    <pre><div>$ pidof init
+$ pidof cinnamon
+</div></pre>
+    <h3>ping Command</h3>
+    <p><strong>ping command</strong> is used to determine connectivity between hosts on a network (or the Internet):</p>
+    <pre><div>$ ping google.com
+</div></pre>
+    <h3>ps Command</h3>
+    <p>ps shows useful information about <a>active processes running on a system</a>. The example below shows the <a>top running processes by highest memory and CPU usage</a>.</p>
+    <pre><div># ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head
+</div></pre>
+    <h3>pstree Command</h3>
+    <p><strong>pstree</strong> displays running processes as a tree which is rooted at either PID or init if PID is omitted.</p>
+    <pre><div>$ pstree
+</div></pre>
+    <h3>pwd Command</h3>
+    <p><a>pwd command</a> displays the name of current/working directory as below.</p>
+    <pre><div>$ pwd
+</div></pre>
+    <h3>rdiff-backup Command</h3>
+    <p><a>rdiff-backup</a> is a powerful local/remote incremental backup script written in Python. It works on any POSIX operating system such as Linux, Mac OS X.</p>
+    <p>Note that for remote backups, you must install the same version of rdiff-backup on both the local and remote machines. Below is an example of a local backup command:</p>
+    <pre><div>$ sudo rdiff-backup /etc /media/tecmint/Backup/server_etc.backup
+</div></pre>
+    <h3>reboot Command</h3>
+    <p><strong>reboot command</strong> may be used to <a>halt, power-off or reboot a system</a> as follows.</p>
+    <pre><div>$ reboot
+</div></pre>
+    <h3>rename Command</h3>
+    <p><a>rename command</a> is used to rename many files at once. If you’ve a collection of files with “<strong>.html</strong>” extension and you want to rename all of them with “<strong>.php</strong>” extension, you can type the command below.</p>
+    <pre><div>$ rename 's/\.html$/\.php/' *.html
+</div></pre>
+    <h3>rm command</h3>
+    <p><strong>rm command</strong> is used to remove files or directories as shown below.</p>
+    <pre><div>$ rm file1
+$ rm -rf my-files
+</div></pre>
+    <h3>rmdir Command</h3>
+    <p><strong>rmdir command</strong> helps to delete/remove empty directories as follows.</p>
+    <pre><div>$ rmdir /backup/all
+</div></pre>
+    <h3>scp Command</h3>
+    <p><a>scp command</a> enables you to securely copy files between hosts on a network, for example.</p>
+    <pre><div>$ scp ~/names.txt
+</div></pre>
+    <h3>shutdown Command</h3>
+    <p><a>shutdown command</a> schedules a time for the system to be powered down. It may be used to halt, power-off or reboot the machine like this.</p>
+    <pre><div>$ shutdown --poweroff
+</div></pre>
+
+    <h3>sleep Command</h3>
+    <p><strong>sleep command</strong> is used to delay or pause (specifically execution of a command) for a specified amount of time.</p>
+    <pre><div>$ check.sh; sleep 5; sudo apt update
+</div></pre>
+    <h3>sort Command</h3>
+    <p><a>sort command</a> is used to sort lines of text in the specified file(s) or from stdin as shown below</p>
+    <pre><div>$ cat words.txt
+</div></pre>
+
+
+    <h3>split Command</h3>
+    <p><a>split</a> as the name suggests, is used to split a large file into small parts.</p>
+    <pre><div>$ tar -cvjf backup.tar.bz2 /home/tecmint/Documents/*
+</div></pre>
+    <h3>ssh Command</h3>
+    <p><a>ssh (SSH client)</a> is an application for remotely accessing and running commands on a remote machine. It is designed to offer a secure encrypted communications between two untrusted hosts over an insecure network such as the Internet.</p>
+    <pre><div>$ ssh <a>[email&#160;protected]</a>
+</div></pre>
+
+
+    <h3>stat Command</h3>
+    <p>stat is used to show a file or file system status like this (<code>-f</code> is used to specify a filesystem).</p>
+    <pre><div>$ stat file1
+</div></pre>
+    <h3>su Command</h3>
+    <p><strong>su command</strong> is used to switch to another user ID or become root during a login session. Note that when <strong>su</strong> is invoked without a username, it defaults to becoming root.</p>
+    <pre><div>$ su
+$ su tecmint
+</div></pre>
+    <h3>sudo Command</h3>
+    <p><a>sudo command</a> allows a permitted system user to run a command as root or another user, as defined by the security policy such as sudoers.</p>
+    <p>In this case, the real (not effective) user ID of the user running <strong>sudo</strong> is used to determine the user name with which to query the security policy.</p>
+    <pre><div>$ sudo apt update
+$ sudo useradd tecmint
+$ sudo passwd tecmint
+</div></pre>
+
+
+    <h3>sum Command</h3>
+    <p><strong>sum command</strong> is used to show the checksum and block counts for each each specified file on the command line.</p>
+    <pre><div>$ sum output file.txt
+</div></pre>
+    <h3>tac Command</h3>
+    <p><a>tac command</a> concatenates and displays files in reverse. It simply prints each file to standard output, showing last line first.</p>
+    <pre><div>$tac file.txt
+</div></pre>
+    <h3>tail Command</h3>
+    <p><a>tail command</a> is used to display the last lines (10 lines by default) of each file to standard output.</p>
+    <p>If there more than one file, precede each with a header giving the file name. Use it as follow (specify more lines to display using <code>-n</code> option).</p>
+    <pre><div>$ tail long-file
+OR
+$ tail -n 15 long-file
+</div></pre>
+    <h3>talk Command</h3>
+    <p><strong>talk command</strong> is used to talk to another system/network user. To talk to a user on the same machine, use their login name, however, to talk to a user on another machine use <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="48aac8d03d3b2d3a0820273b3caac8d166">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/rocketscript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></p>
+    <pre><div>$ talk person [ttyname]
+OR
+$ <a>[email&#160;protected]</a>
+</div></pre>
+    <h3>tar Command</h3>
+    <p><a>tar command</a> is a most powerful utility for archiving files in Linux.</p>
+    <pre><div>$ tar -czf home.tar.gz .
+</div></pre>
+
+
+    <h3>tee Command</h3>
+    <p><strong>tee command</strong> is used to read from standard input and prints to standard output and files as shown below.</p>
+    <pre><div>$ echo "Testing how tee command works" | tee file1
+</div></pre>
+    <h3>time Command</h3>
+    <p><strong>time command</strong> runs programs and summarizes system resource usage.</p>
+    <pre><div>$ time wc /etc/hosts
+</div></pre>
+    <h3>top Command</h3>
+    <p><a>top program</a> displays all processes on a Linux system in regards to memory and CPU usage and provides a dynamic real-time view of a running system.</p>
+    <pre><div>$ top
+</div></pre>
+    <h3>touch Command</h3>
+    <p><a>touch command</a> changes file timestamps, it can also be used to create a file as follows.</p>
+    <pre><div>$ touch file.txt
+</div></pre>
+    <h3 id="tr">tr Command</h3>
+    <p><strong>tr command</strong> is a useful utility used to translate (change) or delete characters from stdin, and write the result to stdout or send to a file as follows.</p>
+    <pre><div>$ cat domain-list.txt | tr [:lower:] [:upper:]
+</div></pre>
+    <h3>uname Command</h3>
+    <p><a>uname command</a> displays system information such as operating system, network node hostname kernel name, version and release etc.</p>
+    <p>Use the <code>-a</code> option to show all the system information:</p>
+    <pre><div>$ uname
+</div></pre>
+    <h3>uniq Command</h3>
+    <p><strong>uniq command</strong> displays or omits repeated lines from input (or standard input). To indicate the number of occurrences of a line, use the <code>-c</code> option.</p>
+    <pre><div>$ cat domain-list.txt
+</div></pre>
+    <h3>uptime Command</h3>
+    <p><a>uptime command</a> shows how long the system has been running, number of logged on users and the system load averages as follows.</p>
+    <pre><div>$ uptime
+</div></pre>
+    <h3>users Command</h3>
+    <p><strong>users command</strong> shows the user names of users currently logged in to the current host like this.</p>
+    <pre><div>
+$ users
+</div></pre>
+    <h3>vim/vi Command</h3>
+    <p><a>vim (Vi Improved) popular text editor</a> on Unix-like operating systems. It can be used to edit all kinds of plain text and program files.</p>
+    <pre><div>$ vim file
+</div></pre>
+
+
+    <h3>w Command</h3>
+    <p><strong>w command</strong> displays system uptime, load averages and information about the users currently on the machine, and what they are doing (their processes) like this.</p>
+    <pre><div>$ w
+</div></pre>
+    <h3>wall Command</h3>
+    <p><strong>wall command</strong> is used to send/display a message to all users on the system as follows.</p>
+    <pre><div>$ wall “This is TecMint – Linux How Tos”
+</div></pre>
+    <h3>watch Command</h3>
+    <p><a>watch command</a> runs a program repeatedly while displaying its output on fullscreen. It can also be used to watch changes to a file/directory. The example below shows how to watch the contents of a directory change.</p>
+    <pre><div>$ watch -d ls -l
+</div></pre>
+    <h3>wc Command</h3>
+    <p><a>wc command</a> is used to display newline, word, and byte counts for each file specified, and a total for many files.</p>
+    <pre><div>$ wc filename
+</div></pre>
+    <h3>wget Command</h3>
+    <p><a>wget command</a> is a simple utility used to download files from the Web in a non-interactive (can work in the background) way.</p>
+    <pre><div>$ wget -c http://ftp.gnu.org/gnu/wget/wget-1.5.3.tar.gz
+</div></pre>
+    <h3>whatis Command</h3>
+    <p><a>whatis command</a> searches and shows a short or one-line manual page descriptions of the provided command name(s) as follows.</p>
+    <pre><div>$ whatis wget
+</div></pre>
+    <h3>which Command</h3>
+    <p><strong>which command</strong> displays the absolute path (pathnames) of the files (or possibly links) which would be executed in the current environment.</p>
+    <pre><div>$ which who
+</div></pre>
+    <h3>who Command</h3>
+    <p><strong>who command</strong> shows information about users who are currently logged in like this.</p>
+    <pre><div>$ who
+</div></pre>
+    <h3>whereis Command</h3>
+    <p><a>whereis command</a> helps us locate the binary, source and manual files for commands.</p>
+    <pre><div>$ whereis cat
+</div></pre>
+    <h3 >xargs Command</h3>
+    <p><strong>xargs command</strong> is a useful utility for reading items from the standard input, delimited by blanks (protected with double or single quotes or a backslash) or newlines, and executes the entered command.</p>
+    <p>The example below show xargs being used to <a >copy a file to multiple directories in Linux</a>.</p>
+    <pre><div>$ echo /home/aaronkilik/test/ /home/aaronkilik/tmp | xargs -n 1 cp -v /home/aaronkilik/bin/sys_info.sh
+</div></pre>
+    <h3>yes Command</h3>
+    <p><strong>yes command</strong> is used to display a string repeatedly until when terminated or killed using [<code>Ctrl + C</code>] as follows.</p>
+    <pre><div>$ yes "This is TecMint - Linux HowTos"
+</div></pre>
+    <h3>youtube-dl Command</h3>
+    <p><a >youtube-dl</a> is a lightweight command-line program to download videos and also <a>extract MP3 tracks from YouTube.com</a> and a few more sites.</p>
+    <p>The command below will list available formats for the video in the provided link.</p>
+    <pre><div>$ youtube-dl --list-formats https://www.youtube.com/watch?v=iR
+</div></pre>
+    <h3>zcmp/zdiff Command</h3>
+    <p><strong>zcmp</strong> and <strong>zdiff</strong> minimal utilities used to compare compressed files as shown in the examples below.</p>
+    <pre><div>$ zcmp domain-list.txt.zip basic_passwords.txt.zip
+$ zdiff domain-list.txt.zip basic_passwords.txt.zip 
+</div></pre>
+    <h3>zip Command</h3>
+    <p><strong>zip</strong> is a simple and easy-to-use utility used to package and compress (archive) files.</p>
+    <pre><div>$ tar cf - . | zip | dd of=/dev/nrst0 obs=16k
+$ zip inarchive.zip foo.c bar.c --out outarchive.zip
+$ tar cf - .| zip backup -
+</div></pre>
+    <h3>zz Command</h3>
+    <p><strong>zz command</strong> is an alias of the <a >fasd commandline tool </a> that offers quick access to files and directories in Linux. It is used to quickly and interactively <a>cd into a previously accessed directory</a> by selecting the directory number from the first field as follows.</p>
+    <pre><div>$ zz
+</div></pre>
+    <p>That’s it for now! As we mentioned before, there are a countless number of commands in Linux. The list is possibly longer than we can offer. Use the feedback form below to share any useful and frequently used commands missing in this list.</p>
+</div>
+
+</body>
+</html> 

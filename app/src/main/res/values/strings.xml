@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Computer Shortcut Keys</string>
+    <string name="win">Windows Basic</string>
+    <string name="word">MS Word</string>
+    <string name="exce">MS Excel</string>
+    <string name="power">Powerpoint</string>
+    <string name="photo">Photoshop</string>
+    <string name="illus">Illustrator</string>
+    <string name="chrome">Chrome Shortcut</string>
+    <string name="linux">Linux Command</string>
+    <string name="face">Facebook</string>
+    <string name="note">Notepad</string>
+    <string name="banner_ad_unit_id">ca-app-pub-5984200503092179/6434064925</string>
+    <string name="admob_interstitial_id">ca-app-pub-5984200503092179/7655647250</string>
+</resources>
